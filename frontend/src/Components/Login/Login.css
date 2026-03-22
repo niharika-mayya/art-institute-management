@@ -1,0 +1,24 @@
+.login-form {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #778873;
+
+}
+
+.login-container {
+    padding: 35px;
+    background: rgba(238, 234, 234, 0.5);
+    backdrop-filter: blur(20px) saturate(120%);
+
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+    text-align: center;
+}
+
+.login-button {
+    width: 10rem;
+}

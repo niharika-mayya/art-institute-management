@@ -5,15 +5,19 @@ import App from './App.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Provider } from 'react-redux';
+import { store } from './Redux/Store.js';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
-    <ToastContainer
-      position="top-right"
-      autoClose={2000}
-      hideProgressBar={true}   
-      theme="colored"
-    />
+    <Provider store={store}>
+      <App />
+      <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar={true}
+        theme="colored"
+      />
+      </Provider>
   </StrictMode>,
 )

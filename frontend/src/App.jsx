@@ -1,12 +1,16 @@
-import { useState } from 'react'
+import {BrowserRouter,Routes,Route} from "react-router-dom"
 import Login from './Components/Login/Login'
+import SuperAdminDashboard from "./Components/Dashboard/SuperAdminDashboard"
 
 function App() {
 
   return (
-    <>
-      <Login/>
-    </>
+  <BrowserRouter>
+  <Routes>
+    <Route path="/" element={<Login/>}/>
+    <Route path="/dashboard" element={<SuperAdminDashboard/>}/>
+  </Routes>
+  </BrowserRouter>
   )
 }
 

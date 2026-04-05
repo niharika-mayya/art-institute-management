@@ -12,9 +12,6 @@ app.use(cors()) //Allows request from frontend(different port like 5173). Withou
 app.use(express.json()) //Allows backend to read json data from the frontend
 
 //Route
-// app.get("/", (req, res) => {
-//   res.send("Backend running "); //Creates api
-// });
 app.use("/api", authRoutes);
 
 // Start server

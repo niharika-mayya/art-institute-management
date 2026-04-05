@@ -1,10 +1,10 @@
 import React from 'react'
-import Sidebar from '../../Layouts/Sidebar'
+import "./SuperAdminDashboard.css"
 
 export default function SuperAdminDashboard() {
     return (
-        <div>
-            <Sidebar />
+        <div className='super-dash-container'>
+                <div className='super-dash-header bold-600'>DASHBOARD</div>
         </div>
 
     )

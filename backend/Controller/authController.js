@@ -1,10 +1,10 @@
 const User = require("../Models/User")
+const jwt=require("jsonwebtoken")
 
 exports.login = async (req, res) => {
     try {
         const { username, password } = req.body
         const user = await User.findOne({ username });
-
         if (!user) {
             return res.status(400).json({ message: "User not found" });
         }
@@ -17,9 +17,20 @@ exports.login = async (req, res) => {
             return res.status(400).json({ message: "User inactive" });
         }
 
+        // Create token
+        const token=jwt.sign(
+            {
+                id:user._id,
+                username:user.username,
+                userType:user.userType
+            },
+            "secretkey123",
+            {expiresIn:"1d"}
+        )
+
         return res.json({
             message: "Login successful",
-            userType: user.userType
+            token: token
         });
 
     } catch (error) {

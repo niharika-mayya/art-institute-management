@@ -1,9 +1,24 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { jwtDecode } from "jwt-decode";
+
+const token=localStorage.getItem("token");
 
 //Default state
-const initialState={
+let initialState={
     username: "",
     userType:""
+}
+
+if (token) {
+    try {
+        const user = jwtDecode(token);
+        initialState = {
+            username: user.username,
+            userType: user.userType
+        };
+    } catch (error) {
+        console.log("Invalid token");
+    }
 }
 
 const userSlice = createSlice({

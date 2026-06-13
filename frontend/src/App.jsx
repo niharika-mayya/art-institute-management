@@ -6,22 +6,9 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setUser } from "./Redux/userSlice";
 import { jwtDecode } from "jwt-decode";
+import Institute from "./Components/Institute/Institute";
 
 function App() {
-//  const dispatch = useDispatch();
-
-//   useEffect(() => {
-//     const token = localStorage.getItem("token");
-
-//     if (token) {
-//       const user = jwtDecode(token);
-
-//       dispatch(setUser({
-//         username: user.username,
-//         userType: user.userType
-//       }));
-//     }
-//   }, []);
 
   return (
     <BrowserRouter>
@@ -33,6 +20,16 @@ function App() {
             <>
               <MainContainer>
                 <SuperAdminDashboard />
+              </MainContainer>
+            </>
+          }
+        />
+        <Route
+          path="/institute"
+          element={
+            <>
+              <MainContainer>
+                <Institute />
               </MainContainer>
             </>
           }

@@ -1,0 +1,40 @@
+.institute-header {
+    font-size: 25px;
+    display: flex;
+
+}
+
+.institute-grid {
+    display: grid;
+    grid-template-columns: 10rem 1fr;
+    margin-bottom: 1rem;
+}
+
+.institute-table {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+.institute-table td {
+    border-bottom: 1px solid #778873;
+    padding: 10px;
+    color: #778873;
+
+}
+
+.institute-table th {
+    background-color: #F1F3E0;
+    border-bottom: 2px solid #778873;
+    border-top: 2px solid #778873;
+    padding: 10px;
+    color: #778873;
+    font-weight: 500;
+
+}
+
+@media (max-width: 768px) {
+    .institute-grid {
+        grid-template-columns: 1fr;
+
+    }
+}

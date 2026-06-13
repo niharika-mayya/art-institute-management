@@ -2,6 +2,7 @@ const express =require("express")  //Framework to build backend api
 const cors=require("cors") //Allows frontend to talk to backend
 const connectDB = require("./config/configDB");
 const authRoutes=require("./Routes/authRoutes")
+const instituteRoute=require("./Routes/instituteRoute")
 
 connectDB()
 
@@ -13,6 +14,7 @@ app.use(express.json()) //Allows backend to read json data from the frontend
 
 //Route
 app.use("/api", authRoutes);
+app.use("/api",instituteRoute);
 
 // Start server
 app.listen(5000, () => {

@@ -82,7 +82,7 @@ export default function Login() {
                             />
                             <img
                                 src={showPassword ? eyeOffIcon : eyeIcon}
-                                className='eye-icon'
+                                className='icon-style'
                                 onClick={() => setShowPassword(!showPassword)}
                             />
 

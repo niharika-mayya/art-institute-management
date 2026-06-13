@@ -5,6 +5,20 @@ const userSchema = new mongoose.Schema({
     required: true,
     unique: true
   },
+  name:{
+    type:String,
+    required:true
+  },
+  email:{
+    type: String,
+    required: true,
+    unique: true
+  },
+    phone:{
+    type: String,
+    required: true,
+    unique: true
+  },
   password: {
     type: String,
     required: true
@@ -12,6 +26,10 @@ const userSchema = new mongoose.Schema({
     userType: {
     type: String,
     enum: ["superadmin", "admin", "student"],
+  },
+  instituteId: {          
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Institute"
   },
   status: {
     type: String,

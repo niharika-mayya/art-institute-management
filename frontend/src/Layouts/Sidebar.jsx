@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import "./Sidebar.css"
 import { useSelector, useDispatch } from 'react-redux'
 import { clearUser } from "../Redux/userSlice"
-import { useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 function Sidebar() {
     const { username, userType } = useSelector((state) => state.user)
     const [toggle, setToggle] = useState(false)
@@ -40,8 +40,9 @@ function Sidebar() {
                 </div>
                 <hr className='hr-line' />
                 <div className='nav-options'>
-                    <div className='nav-option-item cursor-default'>Dashboard</div>
-                    <div className='nav-option-item cursor-default'>Institute</div>
+                    <div className='nav-option-item cursor-default' onClick={() => navigate("/dashboard")}>Dashboard</div>
+                    <div className='nav-option-item cursor-default' onClick={() => navigate("/institute")}>Institute</div>
+                    <div className='nav-option-item cursor-default' onClick={() => navigate("/user")}>User</div>
                     <div className='nav-option-item cursor-default'>Settings</div>
                     <div className='nav-option-item cursor-default' onClick={handleLogout}>Logout</div>
                 </div>
